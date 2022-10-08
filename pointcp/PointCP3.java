@@ -1,4 +1,4 @@
-public class PointCP3 {
+public class PointCP3 extends PointCP5 {
 
   private double x;
   private double y;
@@ -8,18 +8,22 @@ public class PointCP3 {
     this.y = y;
   }
 
+  @Override
   public double getX() {
     return this.x;
   }
 
+  @Override
   public double getY() {
     return this.y;
   }
 
+  @Override
   public double getRho() {
-    return (Math.sqrt(this.x * this.x + this.y * this.y));
+    return Math.sqrt(this.x * this.x + this.y * this.y);
   }
 
+  @Override
   public double getTheta() {
     return Math.toDegrees(Math.atan2(this.y, this.x));
   }
