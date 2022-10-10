@@ -55,10 +55,25 @@ public class PointCPBenchmark {
                 double a = this.aGen.applyAsDouble(random);
                 double b = this.bGen.applyAsDouble(random);
 
-                result.xTime += this.getRunTime(() -> blackHole[0] += this.x.applyAsDouble(this.constructor.construct(a, b)));
-                result.yTime += this.getRunTime(() -> blackHole[0] += this.y.applyAsDouble(this.constructor.construct(a, b)));
-                result.rhoTime += this.getRunTime(() -> blackHole[0] += this.rho.applyAsDouble(this.constructor.construct(a, b)));
-                result.thetaTime += this.getRunTime(() -> blackHole[0] += this.theta.applyAsDouble(this.constructor.construct(a, b)));
+                long xTime = this.getRunTime(() -> blackHole[0] += this.x.applyAsDouble(this.constructor.construct(a, b)));
+                result.xTime += xTime;
+                if(xTime < result.xTimeMin) result.xTimeMin = xTime;
+                if(xTime > result.xTimeMax) result.xTimeMax = xTime;
+
+                long yTime = this.getRunTime(() -> blackHole[0] += this.y.applyAsDouble(this.constructor.construct(a, b)));
+                result.yTime += yTime;
+                if(yTime < result.yTimeMin) result.yTimeMin = yTime;
+                if(yTime > result.yTimeMax) result.yTimeMax = yTime;
+
+                long rhoTime = this.getRunTime(() -> blackHole[0] += this.rho.applyAsDouble(this.constructor.construct(a, b)));
+                result.rhoTime += rhoTime;
+                if(rhoTime < result.rhoTimeMin) result.rhoTimeMin = rhoTime;
+                if(rhoTime > result.rhoTimeMax) result.rhoTimeMax = rhoTime;
+
+                long thetaTime = this.getRunTime(() -> blackHole[0] += this.theta.applyAsDouble(this.constructor.construct(a, b)));
+                result.thetaTime += thetaTime;
+                if(thetaTime < result.thetaTimeMin) result.thetaTimeMin = thetaTime;
+                if(thetaTime > result.thetaTimeMax) result.thetaTimeMax = thetaTime;
             }
 
             //Stops JIT optimizations
@@ -83,14 +98,22 @@ public class PointCPBenchmark {
         private long yTime;
         private long rhoTime;
         private long thetaTime;
+        private long xTimeMin = Integer.MAX_VALUE;
+        private long yTimeMin = Integer.MAX_VALUE;
+        private long rhoTimeMin = Integer.MAX_VALUE;
+        private long thetaTimeMin = Integer.MAX_VALUE;
+        private long xTimeMax = Integer.MIN_VALUE;
+        private long yTimeMax = Integer.MIN_VALUE;
+        private long rhoTimeMax = Integer.MIN_VALUE;
+        private long thetaTimeMax = Integer.MIN_VALUE;
 
         @Override
         public String toString() {
-            return String.format("%f | %f | %f | %f",
-                (double)this.xTime / this.iterations,
-                (double)this.yTime / this.iterations,
-                (double)this.rhoTime / this.iterations,
-                (double)this.thetaTime / this.iterations);
+            return String.format("%f [%d, %d] | %f [%d, %d] | %f [%d, %d] | %f [%d, %d]",
+                (double)this.xTime / this.iterations, this.xTimeMin, this.xTimeMax,
+                (double)this.yTime / this.iterations, this.yTimeMin, this.yTimeMax,
+                (double)this.rhoTime / this.iterations, this.rhoTimeMin, this.rhoTimeMax,
+                (double)this.thetaTime / this.iterations, this.thetaTimeMin, this.thetaTimeMax);
         }
     }
 
