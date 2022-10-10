@@ -7,7 +7,6 @@ import java.util.function.ToDoubleFunction;
 public class PointCPBenchmark {
 
     public static void main(String[] args) {
-        double d = 1.11022302462516E-16;
         Monitor<PointCP2> m1 = new Monitor<>("PointCP2",
             PointCP2::new, random -> random.nextDouble() * 10.0D, random -> random.nextDouble() * 10.0D,
             PointCP2::getX, PointCP2::getY, PointCP2::getRho, PointCP2::getTheta
