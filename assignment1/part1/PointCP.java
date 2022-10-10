@@ -1,4 +1,4 @@
-// This file contains material supporting section 2.9 of the textbook:
+package part1;// This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at http://www.site.uottawa.ca/school/research/lloseng/
 

@@ -1,4 +1,4 @@
-package code_part2;
+package part2;
 
 public class Test {
 

@@ -1,3 +1,5 @@
+package part1;
+
 public class PointCP2 extends PointCP5 {
 
   private double rho;
@@ -28,6 +30,7 @@ public class PointCP2 extends PointCP5 {
     return this.theta;
   }
 
+  @Override
   public String toString() {
     return String.format("PolarCoord{%f, %f}", this.rho, this.theta);
   }

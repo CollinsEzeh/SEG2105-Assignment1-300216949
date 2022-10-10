@@ -1,4 +1,4 @@
-// This file contains material supporting section 2.9 of the textbook:
+package part1;// This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at http://www.site.uottawa.ca/school/research/lloseng/
 
@@ -18,10 +18,10 @@ public class PointCPTest
   //Class methods *****************************************************
 
   /**
-   * This method is responsible for the creation of the PointCP
+   * This method is responsible for the creation of the part1.PointCP
    * object.  This can be done in two ways; the first, by using the
    * command line and running the program using <code> java 
-   * PointCPTest &lt;coordtype (c/p)&gt; &lt;X/RHO&gt; &lt;Y/THETA&gt;
+   * part1.PointCPTest &lt;coordtype (c/p)&gt; &lt;X/RHO&gt; &lt;Y/THETA&gt;
    * </code> and the second by getting the program to prompt the user.
    * If the user does not enter a valid sequence at the command line,
    * the program will prompte him or her.
@@ -38,7 +38,7 @@ public class PointCPTest
     System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
     // Check if the user input coordinates from the command line
-    // If he did, create the PointCP object from these arguments.
+    // If he did, create the part1.PointCP object from these arguments.
     // If he did not, prompt the user for them.
     try
     {
@@ -72,10 +72,10 @@ public class PointCPTest
 
   /**
    * This method obtains input from the user and verifies that
-   * it is valid.  When the input is valid, it returns a PointCP
+   * it is valid.  When the input is valid, it returns a part1.PointCP
    * object.
    *
-   * @return A PointCP constructed using information obtained 
+   * @return A part1.PointCP constructed using information obtained
    *         from the user.
    * @throws IOException If there is an error getting input from
    *         the user.
@@ -157,7 +157,7 @@ public class PointCPTest
       //Reset flag so while loop will prompt for other arguments
       isOK = false;
     }
-    //Return a new PointCP object
+    //Return a new part1.PointCP object
     return (new PointCP(coordType, a, b));
   }
 }

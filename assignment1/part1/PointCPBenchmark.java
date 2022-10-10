@@ -1,3 +1,5 @@
+package part1;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.function.ToDoubleFunction;
@@ -5,18 +7,19 @@ import java.util.function.ToDoubleFunction;
 public class PointCPBenchmark {
 
     public static void main(String[] args) {
+        double d = 1.11022302462516E-16;
         Monitor<PointCP2> m1 = new Monitor<>("PointCP2",
             PointCP2::new, random -> random.nextDouble() * 10.0D, random -> random.nextDouble() * 10.0D,
             PointCP2::getX, PointCP2::getY, PointCP2::getRho, PointCP2::getTheta
         );
 
-        Monitor<PointCP3> m2 = new Monitor<>("PointCP3",
+        Monitor<PointCP3> m2 = new Monitor<>("PointCP3.java",
             PointCP3::new, random -> random.nextDouble() * Math.PI * 2.0D, random -> random.nextDouble() * 1000.0D,
             PointCP3::getX, PointCP3::getY, PointCP3::getRho, PointCP3::getTheta
         );
 
-        System.out.println(m1.execute(1000000000, 1234L));
-        System.out.println(m2.execute(1000000000, 1234L));
+        System.out.println(m1.name + ": " + m1.execute(100000000, 1234L));
+        System.out.println(m2.name + ": " + m2.execute(100000000, 1234L));
     }
 
     public static class Monitor<T> {
@@ -59,6 +62,7 @@ public class PointCPBenchmark {
                 result.thetaTime += this.getRunTime(() -> blackHole[0] += this.theta.applyAsDouble(this.constructor.construct(a, b)));
             }
 
+            //Stops JIT optimizations
             System.out.println("black hole " + Arrays.toString(blackHole));
             return result;
         }

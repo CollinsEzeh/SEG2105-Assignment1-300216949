@@ -1,3 +1,5 @@
+package part1;
+
 public class PointCP3 extends PointCP5 {
 
   private double x;
@@ -28,6 +30,7 @@ public class PointCP3 extends PointCP5 {
     return Math.toDegrees(Math.atan2(this.y, this.x));
   }
 
+  @Override
   public String toString() {
     return String.format("CartesianCoord{%f, %f}", this.x, this.y);
   }

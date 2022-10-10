@@ -59,7 +59,7 @@ during the lab and then finish off the work on your own time before the deadline
 the textbook, starting on page 57. If you have not done this, take five
 minutes now to do it. The texbook pages necessary to complete this assignment can be found in the Brightspace.
 
-2. This Lab/Assignment will focus on [PointCP](/pointcp) from this repository,
+2. This Lab/Assignment will focus on [part1.PointCP](/assignment1) from this repository,
 so all instructions will be relative to that directory.
 
 ```
@@ -69,27 +69,27 @@ cd pointcp
 Before making any changes, compile the code and make sure it runs.
 
 ```
-javac PointCP.java PointCPTest.java
+javac part1.PointCP.java part1.PointCPTest.java
 ```
 
 To run the program
 
 ```
-java PointCPTest
+java part1.PointCPTest
 ```
 You can, of course, run the programs using the Eclipse IDE (or your preferred IDE).
 
-## PointCP
+## part1.PointCP
 
 All modifications should be done within the `/pointcp` directory.
 By modifying the original version (Design 1), implement the following designs.
 
-* design 2 (add code in `/design2` directory). Add your code in  `PointCP2.java`. 
-* design 3 (add code in `/design3` directory). Add your code in  `PointCP3.java` . 
-* design 5 (add code in `/design5` directory). Add your code in  `PointCP5.java` and modify your existing  `PointCP2.java` and  `PointCP3.java` (to adapt them to the new design requirements. 
+* design 2 (add code in `/design2` directory). Add your code in  `part1.PointCP2.java`. 
+* design 3 (add code in `/design3` directory). Add your code in  `part1.PointCP3.java` . 
+* design 5 (add code in `/design5` directory). Add your code in  `part1.PointCP5.java` and modify your existing  `part1.PointCP2.java` and  `part1.PointCP3.java` (to adapt them to the new design requirements. 
 
-4. Modify the `PointCPTest` class to allow you to test the designs you
-have developed. Do a thorough series of tests to ensure your classes work properly. You can implement other classes to facilitate the task or add any extar functions to the `PointCPTest` class. 
+4. Modify the `part1.PointCPTest` class to allow you to test the designs you
+have developed. Do a thorough series of tests to ensure your classes work properly. You can implement other classes to facilitate the task or add any extar functions to the `part1.PointCPTest` class. 
 
 5. Hand in your answers to exercises E26 (table of what you think will be the advantages and
 disadvantages of each design), and E28-E30 (performance analysis, comparing all three
@@ -116,7 +116,7 @@ All your written answers can be submitted in a single Word or PDF document. Make
 ## PART 2 - Object Oriented Review
 
 Based on the memory diagram below, write the implementation in Java of all the
-classes, instance variables, and constructors. Submit the Java classes including a class named *Test.java* containing a **main** method (that is used to create the necessary instances and initialize all variables). Place your code in the folder *code_part2* of your repository.
+classes, instance variables, and constructors. Submit the Java classes including a class named *Test.java* containing a **main** method (that is used to create the necessary instances and initialize all variables). Place your code in the folder *part2* of your repository.
 
 ![alt text](https://github.com/SEG2105-uottawa/SEG2105-Assignment1/blob/master/seg2105-a1.png)
 
